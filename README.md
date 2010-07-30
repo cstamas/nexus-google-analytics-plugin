@@ -8,5 +8,10 @@ Known issues:
 * no real config, using system properties to "sneak in the GA ID". See DefaultGoogleAnalyticsPluginConfiguration class.
 * is hastily drafted. Ideas please!
 
+Thank you
+=========
+
+A lot of thanks goes to Lars J. Nilsson for a great inspiration!
+
 Have fun!  
 ~t~
