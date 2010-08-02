@@ -49,7 +49,7 @@ public class MavenGroupIdSelectionStrategy
 
         if ( groupId != null && groupId.trim().length() > 0 )
         {
-            FocusPoint fp = new FocusPoint( groupId );
+            FocusPoint fp = new FocusPoint( groupId, new FocusPoint( uid.getRepository().getId() ) );
 
             // TODO: trackerID!!!
             NexusFPoint nfp = new NexusFPoint( fp, configuration.getUITrackerId() );

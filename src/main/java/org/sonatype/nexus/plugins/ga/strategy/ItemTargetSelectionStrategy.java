@@ -30,9 +30,11 @@ public class ItemTargetSelectionStrategy
 
         ArrayList<NexusFPoint> result = new ArrayList<NexusFPoint>( targetSet.getMatches().size() );
 
+        FocusPoint repoFp = new FocusPoint( uid.getRepository().getId() );
+
         for ( TargetMatch targetMatch : targetSet.getMatches() )
         {
-            FocusPoint fp = new FocusPoint( targetMatch.getTarget().getName() );
+            FocusPoint fp = new FocusPoint( targetMatch.getTarget().getName(), repoFp );
 
             // TODO: trackerID!!!
             NexusFPoint nfp = new NexusFPoint( fp, configuration.getUITrackerId() );

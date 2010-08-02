@@ -20,7 +20,7 @@ public class ItemRepositoryPathSelectionStrategy
 
     public Collection<NexusFPoint> getNexusFPointFor( RepositoryItemUid uid )
     {
-        FocusPoint fp = new FocusPoint( uid.getPath() );
+        FocusPoint fp = new FocusPoint( uid.getPath(), new FocusPoint( uid.getRepository().getId() ) );
 
         // TODO: trackerID!!!
         NexusFPoint result = new NexusFPoint( fp, configuration.getUITrackerId() );
