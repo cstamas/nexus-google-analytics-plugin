@@ -1,6 +1,16 @@
 Nexus GA Plugin
 ===============
 
+Capabilities:
+
+* tracking the UI usage with GA
+* tracking repo content (artifacts) acces using GA with different strategies:
+  * by path
+  * by M2 groupId of the artifact
+  * by Repository Target name
+  * feel free to add other "strategy"
+* TBD can use multiple GA IDs, so tracking for "3rd party" (someone hosting artifacts at your Nexus that has Google Analitycs account) is possible too.
+
 Known issues:
 
 * will not work behind HTTP Proxy (unless JVM proxy is set). It needs to obey Nexus global proxy settings. TBD.
