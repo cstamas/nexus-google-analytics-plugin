@@ -8,6 +8,7 @@ import org.sonatype.nexus.plugins.ga.GATrackerCache;
 import org.sonatype.nexus.plugins.ga.GoogleAnalyticsPluginConfiguration;
 import org.sonatype.nexus.plugins.ga.NexusFPoint;
 import org.sonatype.nexus.plugins.ga.NexusFPointSelector;
+import org.sonatype.nexus.proxy.access.AccessManager;
 import org.sonatype.nexus.proxy.events.AbstractEventInspector;
 import org.sonatype.nexus.proxy.events.EventInspector;
 import org.sonatype.nexus.proxy.events.RepositoryItemEventRetrieve;
@@ -21,7 +22,7 @@ public class GAEventInspector
 {
     @Requirement
     private GoogleAnalyticsPluginConfiguration configuration;
-    
+
     @Requirement
     private NexusFPointSelector nexusFPointSelector;
 
@@ -32,7 +33,8 @@ public class GAEventInspector
     {
         if ( configuration.isItemTrackingEnabled() )
         {
-            return evt instanceof RepositoryItemEventRetrieve;
+            return evt instanceof RepositoryItemEventRetrieve
+                && evt.getEventContext().containsKey( AccessManager.REQUEST_REMOTE_ADDRESS );
         }
         else
         {

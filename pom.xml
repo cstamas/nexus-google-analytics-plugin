@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.sonatype.nexus.plugins</groupId>
     <artifactId>nexus-plugins-parent</artifactId>
-    <version>8-SNAPSHOT</version>
+    <version>8</version>
   </parent>
 
   <groupId>org.sonatype.nexus.plugins</groupId>
@@ -20,7 +20,7 @@
   <description>Nexus plugin providing Google Analytics services to Nexus.</description>
 
   <properties>
-    <nexus.version>1.7.3-SNAPSHOT</nexus.version>
+    <nexus.version>1.10-SNAPSHOT</nexus.version>
   </properties>
 
   <dependencies>
